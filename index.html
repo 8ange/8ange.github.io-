@@ -5,105 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angelina | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-  /* Basic styling - Soft fonts and neutral background */
+<style>
+  /* Basic styling - Using a clean font with a soft beige background */
   body { 
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    font-family: 'Georgia', serif; /* Serif font looks great with italics */
     max-width: 900px; 
     margin: 0 auto; 
     padding: 2rem; 
-    line-height: 1.7; 
-    color: #4a5568; /* Soft slate gray for text */
-    background-color: #f7fafc; /* Very light cool gray background */
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #f5f5f0; /* Soft Pastel Beige */
   }
 
-  /* Header - Centered and elegant */
   header { 
-    border-bottom: 2px solid #e2e8f0; 
-    margin-bottom: 3rem; 
-    padding-bottom: 1.5rem; 
-    text-align: center; 
+    border-bottom: 2px solid #001f3f; /* Navy Blue border */
+    margin-bottom: 2rem; 
+    padding-bottom: 1rem; 
   }
 
   h1 { 
-    margin-bottom: 0.3rem; 
-    color: #2d3748; /* Darker gray for contrast */
-    font-size: 2.8rem; 
-    letter-spacing: -1px; 
+    margin-bottom: 0.2rem; 
+    color: #001f3f; /* Navy Blue */
+    font-size: 2.5rem; 
+    font-style: italic; /* Making the main title italic */
   }
 
-  .subtitle { 
-    color: #a0aec0; /* Soft gray for subtitle */
-    font-size: 1.1rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-  }
-
-  /* Section Titles - Gentle Lavender */
   h2 { 
-    color: #805ad5; /* Lavender */
-    font-size: 1.6rem;
-    margin-top: 3rem;
-    border-bottom: 1px solid #edf2f7;
-    padding-bottom: 0.5rem;
+    color: #001f3f; 
+    border-bottom: 1px solid #dcdcdc; 
+    padding-bottom: 0.5rem; 
+    margin-top: 2.5rem; 
+    font-style: italic;
   }
 
-  /* Navigation - Modern soft buttons */
-  nav { margin-top: 1.5rem; }
-  nav a { 
-    margin: 0 10px; 
-    text-decoration: none; 
-    color: #718096; /* Gray-blue */
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+  h3 { margin-bottom: 0.5rem; color: #001f3f; }
+
+  .tagline { 
+    font-style: italic; 
+    color: #555; 
+    font-size: 1.1rem; 
   }
   
-  nav a:hover { 
-    background-color: #e9d8fd; /* Light lavender on hover */
-    color: #6b46c1; 
-  }
-
-  /* Project Cards - Rounded corners and subtle shadow */
-  article { 
-    background: #ffffff; 
-    padding: 2rem; 
-    margin-bottom: 2rem; 
-    border-radius: 16px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
-    border: 1px solid #edf2f7;
-    transition: transform 0.3s ease;
-  }
-
-  article:hover {
-    transform: translateY(-3px); /* Subtle lift effect */
-    box-shadow: 0 10px 15px rgba(128, 90, 213, 0.1);
-  }
-
-  h3 { color: #2d3748; margin-top: 0; }
-
-  /* Links - Soft Indigo */
-  a { 
-    color: #5a67d8; /* Indigo */
+  /* Navigation styling */
+  nav { margin-top: 1rem; }
+  nav a { 
+    margin-right: 20px; 
     text-decoration: none; 
-    font-weight: 600;
-    transition: color 0.2s;
+    color: #001f3f; 
+    font-weight: bold; 
+    font-style: italic;
+    transition: 0.3s; 
   }
+  nav a:hover { color: #555; }
 
-  a:hover { color: #805ad5; text-decoration: underline; }
-
-  /* Tags Styling - For skills or tech stack */
-  .tag {
-    background: #edf2f7;
-    color: #4a5568;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-right: 5px;
-    display: inline-block;
+  /* Section styling - Soft white cards with navy accents */
+  section { margin-bottom: 2rem; }
+  article { 
+    background: #ffffff; /* Clean white for the cards */
+    padding: 1.5rem; 
+    margin-bottom: 1.5rem; 
+    border-left: 5px solid #001f3f; /* Navy Blue accent */
+    border-radius: 4px; 
+    font-style: italic; /* Making project descriptions italic */
   }
+  
+  /* Link styling */
+  a { color: #001f3f; text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+  
+  /* Contact styling */
+  .contact-info { display: flex; flex-wrap: wrap; gap: 20px; }
 </style>
 </head>
 <body>
