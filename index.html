@@ -8,7 +8,7 @@
 <style>
   /* Basic styling - Using a clean font with a soft beige background */
   body { 
-    font-family: 'Georgia', serif; /* Serif font looks great with italics */
+    font-family: 'Georgia', serif; 
     max-width: 900px; 
     margin: 0 auto; 
     padding: 2rem; 
@@ -25,9 +25,9 @@
 
   h1 { 
     margin-bottom: 0.2rem; 
-    color: #001f3f; /* Navy Blue */
+    color: #001f3f; 
     font-size: 2.5rem; 
-    font-style: italic; /* Making the main title italic */
+    font-style: italic; 
   }
 
   h2 { 
@@ -40,12 +40,6 @@
 
   h3 { margin-bottom: 0.5rem; color: #001f3f; }
 
-  .tagline { 
-    font-style: italic; 
-    color: #555; 
-    font-size: 1.1rem; 
-  }
-  
   /* Navigation styling */
   nav { margin-top: 1rem; }
   nav a { 
@@ -60,21 +54,26 @@
 
   /* Section styling - Soft white cards with navy accents */
   section { margin-bottom: 2rem; }
-  article { 
-    background: #ffffff; /* Clean white for the cards */
+  article, .diary-entry { 
+    background: #ffffff; 
     padding: 1.5rem; 
     margin-bottom: 1.5rem; 
-    border-left: 5px solid #001f3f; /* Navy Blue accent */
+    border-left: 5px solid #001f3f; 
     border-radius: 4px; 
-    font-style: italic; /* Making project descriptions italic */
+    font-style: italic; 
   }
   
   /* Link styling */
   a { color: #001f3f; text-decoration: none; font-weight: 500; }
   a:hover { text-decoration: underline; }
-  
-  /* Contact styling */
-  .contact-info { display: flex; flex-wrap: wrap; gap: 20px; }
+
+  .tech-stack span {
+    background: #f5f5f0;
+    padding: 2px 8px;
+    margin-right: 5px;
+    font-size: 0.9rem;
+    border-radius: 3px;
+  }
 </style>
 </head>
 <body>
@@ -88,6 +87,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#production-diary">Diary</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -101,7 +101,7 @@
         <p><em>Interested in backend development and cloud computing.</em></p>
         <p>I enjoy building reliable, data-driven applications that solve real problems.</p>
         <div class="hero-actions">
-          <a href="#projects" class="btn primary">View projects</a>
+          <a href="#projects" class="btn primary">View projects</a> | 
           <a href="YourCVLink.pdf" class="btn secondary">Download CV</a>
         </div>
       </div>
@@ -118,7 +118,6 @@
           </div>
           <div class="links">
             <a href="https://github.com/8ange/project1">Code →</a>
-            <a href="#">Demo →</a>
           </div>
         </article>
 
@@ -138,21 +137,38 @@
     <section id="skills" class="skills-section">
       <h2>Skills & Tools</h2>
       <div class="skills-container">
-        <div class="skill-group">
-          <strong>Languages:</strong> Python, Java, HTML, CSS, JS, SQL
-        </div>
-        <div class="skill-group">
-          <strong>Frameworks:</strong> Git, GitHub, VS Code, Flask
-        </div>
+        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JS, SQL</p>
+        <p><strong>Frameworks:</strong> Git, GitHub, VS Code, Flask</p>
+      </div>
+    </section>
+
+    <section id="production-diary">
+      <h2>Production diary – Week 15</h2>
+      <div class="diary-entry">
+        <p><strong>Date:</strong> 10 February 2026</p>
+        <p>
+          This week I worked on my GitHub Pages portfolio website. I focused on
+          creating and improving the main sections (About, Projects, Skills, Contact)
+          and setting up my CS Maths & Tools page.
+        </p>
+        <p>
+          <strong>I am most happy with </strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique compared to the standard templates.
+        </p>
+        <p>
+          <strong>I found it difficult to </strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I had to carefully pick which elements to style.
+        </p>
+        <p>
+          <strong>Next time I want to improve </strong> the responsiveness of the project grid and perhaps add some small CSS animations to make the "Diary" entries slide in smoothly.
+        </p>
       </div>
     </section>
 
     <section id="contact" class="contact-card">
       <h2>Let's Connect</h2>
       <p>York, United Kingdom</p>
-      <p><a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
+      <p>📧 <a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
       <div class="social-links">
-        <a href="https://github.com/8ange">GitHub</a>
+        <a href="https://github.com/8ange">GitHub</a> | 
         <a href="https://linkedin.com/in/your-link">LinkedIn</a>
       </div>
     </section>
