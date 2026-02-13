@@ -1,94 +1,85 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="logo-group">
-      <h1 class="logo">Angelina</h1>
-      <p class="subtitle">Student Developer • Portfolio</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="logo">Your Name</h1>
+        <p class="subtitle">Student developer • Portfolio</p>
+      </div>
 
-    <nav class="nav" aria-label="Primary">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact" class="btn-contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section id="hero" class="hero-section">
-    <div class="hero-content">
-      <h2>Hello, I’m Angelina</h2>
-      <p class="hero-lead"><strong>Computer Science undergraduate</strong> at the University of York.</p>
-      <p class="hero-sub"><em>Interested in backend development and cloud computing.</em></p>
-      <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn primary">View my projects</a>
-        <a href="YourCVLink.pdf" class="btn secondary">Download CV</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="card">
-    <h2>About me</h2>
-    <div class="about-grid">
-      <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-      <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
-      <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Featured projects</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Project 1 – Portfolio</h3>
-        <p class="project-summary"><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skills, and interests.</p>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-        </div>
-        <p class="contribution"><strong>Contribution:</strong> I designed and developed the entire frontend, including layout and styling.</p>
-        <div class="project-links">
-          <a href="https://github.com/8ange/project1" class="text-link">Source code →</a>
-          <a href="https://your-demo-link.com" class="text-link">Live demo →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <h3>Project 2 – Data Web App</h3>
-        <p class="project-summary"><strong>Summary:</strong> A small web application that allows users to store and retrieve data from a database.</p>
-        <div class="tags">
-          <span>Python</span><span>Flask</span><span>SQL</span>
-        </div>
-        <p class="contribution"><strong>Contribution:</strong> I designed the database schema and implemented backend logic in Flask.</p>
-        <div class="project-links">
-          <a href="https://github.com/yourusername/project2" class="text-link">Source code →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="skills" class="card">
-    <h2>Skills and tools</h2>
-    <div class="skills-wrapper">
-      <div class="skill-group">
-        <strong>Languages:</strong>
-        <p>Python, Java, HTML, CSS, JavaScript, SQL</p>
-      </div>
-      <div class="skill-group">
-        <strong>Frameworks:</strong>
-        <p>Git, GitHub, VS Code</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2>Contact</h2>
-    <div class="contact-details">
-      <p>Email: <a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
-      <p>Location: York, United Kingdom</p>
-      <div class="social-links">
-        <a href="https://github.com/8ange">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-link/">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-</main>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="themeBtn" class="btn small" type="button" aria-label="Toggle theme">
+        </button>
+      </nav>
+    </div>
+  </header>
+<main>
+  <!-- Hero section -->
+  <section id="hero">
+    <h2>Hello, I’m Angelina </h2>
+    <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
+    <p><em>Interested in backend development and cloud computing.</em></p>
+    <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
+    <p><a href="#projects">View my projects</a> | <a href="YourCVLink.pdf">Download my CV</a></p>
+  </section>
+ 
+  <!-- About section -->
+  <section id="about">
+    <h2>About me</h2>
+    <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
+    <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
+    <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
+  </section>
+ 
+  <!-- Projects section -->
+  <section id="projects">
+    <h2>Featured projects</h2>
+ 
+    <article>
+      <h3>Project 1 – Title</h3>
+      <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skillks, and interests. </p>
+      <p><strong>Tech stack:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interacitve elements. </p>
+      <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices </p>
+      <p><a href="https://github.com/8ange/project1">Source code</a> | <a href="https://your-demo-link.com">Live demo</a></p>
+    </article>
+ 
+    <article>
+      <h3>Project 2 – Title</h3>
+      <p><strong>Summary:</strong> AA small web application that allows users to store and retrieve data from a database through a web interface. </p>
+      <p><strong>Tech stack:</strong> Python, Flask, SQL</p>
+      <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL </p>
+      <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations wrok in practice.</p>
+      <p><a href="https://github.com/yourusername/project2">Source code</a></p>
+    </article>
+  </section>
+ 
+  <!-- Skills section -->
+  <section id="skills">
+    <h2>Skills and tools</h2>
+    <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
+    <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
+    <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
+  </section>
+ 
+  <!-- Contact section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto: jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
+    <p>Location: York, United Kingdom</p>
+    <p>Profiles: 
+      <a href="https://github.com/8ange">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/your-link/">LinkedIn</a>
+    </p>
+  </section>
+</main> 
