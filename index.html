@@ -4,172 +4,204 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angelina | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-<style>
-  /* Basic styling - Using a clean font with a soft beige background */
-  body { 
-    font-family: 'Georgia', serif; 
-    max-width: 900px; 
-    margin: 0 auto; 
-    padding: 2rem; 
-    line-height: 1.6; 
-    color: #333; 
-    background-color: #f5f5f0; /* Soft Pastel Beige */
-  }
+  <style>
+    /* Basic styling: beige background and navy blue accents */
+    body { 
+      font-family: 'Georgia', serif; 
+      max-width: 950px; 
+      margin: 0 auto; 
+      padding: 2rem; 
+      line-height: 1.6; 
+      color: #333; 
+      background-color: #f5f5f0; /* Soft Pastel Beige */
+      scroll-behavior: smooth;
+    }
 
-  header { 
-    border-bottom: 2px solid #001f3f; /* Navy Blue border */
-    margin-bottom: 2rem; 
-    padding-bottom: 1rem; 
-  }
+    header { 
+      border-bottom: 2px solid #001f3f; /* Navy Blue border */
+      margin-bottom: 3rem; 
+      padding-bottom: 1.5rem; 
+    }
 
-  h1 { 
-    margin-bottom: 0.2rem; 
-    color: #001f3f; 
-    font-size: 2.5rem; 
-    font-style: italic; 
-  }
+    .logo { 
+      margin-bottom: 0.2rem; 
+      color: #001f3f; 
+      font-size: 2.8rem; 
+      font-style: italic; 
+    }
 
-  h2 { 
-    color: #001f3f; 
-    border-bottom: 1px solid #dcdcdc; 
-    padding-bottom: 0.5rem; 
-    margin-top: 2.5rem; 
-    font-style: italic;
-  }
+    .subtitle {
+      font-style: italic;
+      color: #555;
+      font-size: 1.1rem;
+    }
 
-  h3 { margin-bottom: 0.5rem; color: #001f3f; }
+    h2 { 
+      color: #001f3f; 
+      border-bottom: 1px solid #dcdcdc; 
+      padding-bottom: 0.5rem; 
+      margin-top: 3rem; 
+      font-style: italic;
+    }
 
-  /* Navigation styling */
-  nav { margin-top: 1rem; }
-  nav a { 
-    margin-right: 20px; 
-    text-decoration: none; 
-    color: #001f3f; 
-    font-weight: bold; 
-    font-style: italic;
-    transition: 0.3s; 
-  }
-  nav a:hover { color: #555; }
+    /* Navigation styling */
+    nav { margin-top: 1.5rem; }
+    nav a { 
+      margin-right: 25px; 
+      text-decoration: none; 
+      color: #001f3f; 
+      font-weight: bold; 
+      font-style: italic;
+      font-size: 1.1rem;
+      transition: 0.3s; 
+    }
+    nav a:hover { color: #555; border-bottom: 1px solid #555; }
 
-  /* Section styling - Soft white cards with navy accents */
-  section { margin-bottom: 2rem; }
-  article, .diary-entry { 
-    background: #ffffff; 
-    padding: 1.5rem; 
-    margin-bottom: 1.5rem; 
-    border-left: 5px solid #001f3f; 
-    border-radius: 4px; 
-    font-style: italic; 
-  }
-  
-  /* Link styling */
-  a { color: #001f3f; text-decoration: none; font-weight: 500; }
-  a:hover { text-decoration: underline; }
+    /* Project Grid Layout */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
 
-  .tech-stack span {
-    background: #f5f5f0;
-    padding: 2px 8px;
-    margin-right: 5px;
-    font-size: 0.9rem;
-    border-radius: 3px;
-  }
-</style>
+    /* Card styling for Projects, Diary, and About */
+    article, .diary-entry, .info-card { 
+      background: #ffffff; 
+      padding: 1.8rem; 
+      border-left: 6px solid #001f3f; 
+      border-radius: 8px; 
+      font-style: italic; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Hover effect for cards */
+    article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h3 { margin-top: 0; color: #001f3f; font-size: 1.4rem; }
+
+    /* Tech Stack Tags styling */
+    .tech-stack { margin: 10px 0; }
+    .tech-stack span {
+      background: #f5f5f0;
+      color: #001f3f;
+      padding: 4px 10px;
+      margin-right: 8px;
+      font-size: 0.85rem;
+      border-radius: 5px;
+      font-style: normal;
+      font-weight: bold;
+      border: 1px solid #dee2e6;
+    }
+
+    /* Link styling */
+    a { color: #001f3f; text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    .hero-links { margin-top: 1.5rem; }
+
+    /* Contact Section Styling */
+    .contact-card {
+      text-align: center;
+      background: #001f3f;
+      color: #f5f5f0;
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin-top: 4rem;
+    }
+    .contact-card h2, .contact-card a { color: #f5f5f0; border-color: #f5f5f0; }
+    
+    /* Responsive adjustment for small screens */
+    @media (max-width: 600px) {
+      .project-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo-group">
-        <h1 class="logo">Angelina</h1>
-        <p class="subtitle">Computer Science Student</p>
-      </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#production-diary">Diary</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header>
+    <div class="logo-group">
+      <h1 class="logo">Angelina</h1>
+      <p class="subtitle">Computer Science Student • Portfolio</p>
     </div>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#production-diary">Diary</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-<main>
-  <!-- Hero section -->
-  <section id="hero">
-    <h2>Hello, I’m Angelina </h2>
-    <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
-    <p><em>Interested in backend development and cloud computing.</em></p>
-    <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
-    <p><a href="#projects">View my projects</a> | <a href="YourCVLink.pdf">Download my CV</a></p>
-  </section>
- 
-  <!-- About section -->
-  <section id="about">
-    <h2>About me</h2>
-    <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-    <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
-    <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
-  </section>
- 
-  <!-- Projects section -->
-  <section id="projects">
-    <h2>Featured projects</h2>
- 
-    <article>
-      <h3>Project 1 – Title</h3>
-      <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skillks, and interests. </p>
-      <p><strong>Tech stack:</strong> HTML, CSS, JavaScript</p>
-      <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interacitve elements. </p>
-      <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices </p>
-      <p><a href="https://github.com/8ange/project1">Source code</a> | <a href="https://your-demo-link.com">Live demo</a></p>
-    </article>
- 
-    <article>
-      <h3>Project 2 – Title</h3>
-      <p><strong>Summary:</strong> AA small web application that allows users to store and retrieve data from a database through a web interface. </p>
-      <p><strong>Tech stack:</strong> Python, Flask, SQL</p>
-      <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL </p>
-      <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations wrok in practice.</p>
-      <p><a href="https://github.com/yourusername/project2">Source code</a></p>
-    </article>
-  </section>
- 
-  <!-- Skills section -->
-  <section id="skills">
-    <h2>Skills and tools</h2>
-    <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
-    <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
-    <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
-  </section>
- 
-  <!-- Contact section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto: jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
-    <p>Location: York, United Kingdom</p>
-    <p>Profiles: 
-      <a href="https://github.com/8ange">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/your-link/">LinkedIn</a>
-    </p>
-  </section>
+  <main>
+    <section id="hero">
+      <h2>Hello, I’m Angelina</h2>
+      <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
+      <p><em>Interested in backend development and cloud computing.</em></p>
+      <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
+      <p class="hero-links">
+        <a href="#projects">View my projects →</a> | 
+        <a href="YourCVLink.pdf">Download my CV (PDF)</a>
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="info-card">
+        <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
+        <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
+        <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured projects</h2>
+      <div class="project-grid">
+        <article>
+          <h3>Project 1 – Portfolio</h3>
+          <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skills, and interests.</p>
+          <div class="tech-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interactive elements.</p>
+          <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices.</p>
+          <p><a href="https://github.com/8ange/project1">Source code</a> | <a href="#">Live demo</a></p>
+        </article>
+
+        <article>
+          <h3>Project 2 – Data App</h3>
+          <p><strong>Summary:</strong> A small web application that allows users to store and retrieve data from a database through a web interface.</p>
+          <div class="tech-stack">
+            <span>Python</span><span>Flask</span><span>SQL</span>
+          </div>
+          <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL.</p>
+          <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations work in practice.</p>
+          <p><a href="https://github.com/yourusername/project2">Source code</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills and tools</h2>
+      <div class="info-card">
+        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
+        <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
+        <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
+      </div>
+    </section>
+
     <section id="production-diary">
       <h2>Production diary – Week 15</h2>
       <div class="diary-entry">
         <p><strong>Date:</strong> 10 February 2026</p>
-        <p>
-          This week I worked on my GitHub Pages portfolio website. I focused on
-          creating and improving the main sections (About, Projects, Skills, Contact)
-          and setting up my CS Maths & Tools page.
-        </p>
-        <p>
-          <strong>I am most happy with</strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique compared to the standard templates.
-        </p>
-        <p>
-          <strong>I found it difficult to</strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I had to carefully pick which elements to style.
-        </p>
-        <p>
-          <strong>Next time I want to improve</strong> the responsiveness of the project grid and perhaps add some small CSS animations to make the "Diary" entries slide in smoothly.
-        </p>
+        <p>This week I worked on my GitHub Pages portfolio website. I focused on creating and improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
+        <p><strong>I am most happy with</strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique.</p>
+        <p><strong>I found it difficult to</strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I carefully picked which elements to style.</p>
+        <p><strong>Next time I want to improve</strong> the responsiveness of the project grid and add some small CSS animations.</p>
       </div>
     </section>
 
@@ -177,11 +209,12 @@
       <h2>Let's Connect</h2>
       <p>York, United Kingdom</p>
       <p>📧 <a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
-      <div class="social-links">
+      <div class="social-links" style="margin-top: 15px;">
         <a href="https://github.com/8ange">GitHub</a> | 
         <a href="https://linkedin.com/in/your-link">LinkedIn</a>
       </div>
     </section>
   </main>
+
 </body>
 </html>
