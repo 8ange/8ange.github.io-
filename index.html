@@ -3,88 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angelina | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-<style>
-  /* Basic styling - Using a clean font with a soft beige background */
-  body { 
-    font-family: 'Georgia', serif; 
-    max-width: 900px; 
-    margin: 0 auto; 
-    padding: 2rem; 
-    line-height: 1.6; 
-    color: #333; 
-    background-color: #f5f5f0; /* Soft Pastel Beige */
-  }
+  <title>My Portfolio</title>
+  <style>
+    /* Basic styling - Using a clean font with a soft beige background */
+    body { 
+      font-family: 'Georgia', serif; 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 2rem; 
+      line-height: 1.6; 
+      color: #333; 
+      background-color: #f5f5f0; /* Soft Pastel Beige */
+    }
 
-  header { 
-    border-bottom: 2px solid #001f3f; /* Navy Blue border */
-    margin-bottom: 2rem; 
-    padding-bottom: 1rem; 
-  }
+    header { 
+      border-bottom: 2px solid #001f3f; /* Navy Blue border */
+      margin-bottom: 2rem; 
+      padding-bottom: 1rem; 
+    }
 
-  h1 { 
-    margin-bottom: 0.2rem; 
-    color: #001f3f; 
-    font-size: 2.5rem; 
-    font-style: italic; 
-  }
+    h1 { 
+      margin-bottom: 0.2rem; 
+      color: #001f3f; 
+      font-size: 2.5rem; 
+      font-style: italic; 
+    }
 
-  h2 { 
-    color: #001f3f; 
-    border-bottom: 1px solid #dcdcdc; 
-    padding-bottom: 0.5rem; 
-    margin-top: 2.5rem; 
-    font-style: italic;
-  }
+    h2 { 
+      color: #001f3f; 
+      border-bottom: 1px solid #dcdcdc; 
+      padding-bottom: 0.5rem; 
+      margin-top: 2.5rem; 
+      font-style: italic;
+    }
 
-  h3 { margin-bottom: 0.5rem; color: #001f3f; }
+    h3 { margin-bottom: 0.5rem; color: #001f3f; }
 
-  /* Navigation styling */
-  nav { margin-top: 1rem; }
-  nav a { 
-    margin-right: 20px; 
-    text-decoration: none; 
-    color: #001f3f; 
-    font-weight: bold; 
-    font-style: italic;
-    transition: 0.3s; 
-  }
-  nav a:hover { color: #555; }
+    /* Navigation styling */
+    nav { margin-top: 1rem; }
+    nav a { 
+      margin-right: 20px; 
+      text-decoration: none; 
+      color: #001f3f; 
+      font-weight: bold; 
+      font-style: italic;
+      transition: 0.3s; 
+    }
+    nav a:hover { color: #555; }
 
-  /* Section styling - Soft white cards with navy accents */
-  section { margin-bottom: 2rem; }
-  article, .diary-entry { 
-    background: #ffffff; 
-    padding: 1.5rem; 
-    margin-bottom: 1.5rem; 
-    border-left: 5px solid #001f3f; 
-    border-radius: 4px; 
-    font-style: italic; 
-  }
-  
-  /* Link styling */
-  a { color: #001f3f; text-decoration: none; font-weight: 500; }
-  a:hover { text-decoration: underline; }
-
-  .tech-stack span {
-    background: #f5f5f0;
-    padding: 2px 8px;
-    margin-right: 5px;
-    font-size: 0.9rem;
-    border-radius: 3px;
-  }
-</style>
+    /* Section styling */
+    section { margin-bottom: 2rem; }
+    article, .about-content, .diary-entry { 
+      background: #ffffff; 
+      padding: 1.5rem; 
+      margin-bottom: 1.5rem; 
+      border-left: 5px solid #001f3f; 
+      border-radius: 4px; 
+      font-style: italic; 
+    }
+    
+    /* Link styling */
+    a { color: #001f3f; text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo-group">
+      <div>
         <h1 class="logo">Angelina</h1>
-        <p class="subtitle">Computer Science Student</p>
+        <p class="subtitle" style="font-style: italic; color: #666;">Student developer • Portfolio</p>
       </div>
 
       <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#production-diary">Diary</a>
@@ -93,85 +85,85 @@
     </div>
   </header>
 
-  <main class="container">
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <h2>Hello, I’m Angelina </h2>
-        <p class="lead"><strong>Computer Science undergraduate</strong> at the University of York.</p>
-        <p><em>Interested in backend development and cloud computing.</em></p>
-        <p>I enjoy building reliable, data-driven applications that solve real problems.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary">View projects</a> | 
-          <a href="YourCVLink.pdf" class="btn secondary">Download CV</a>
-        </div>
-      </div>
-    </section>
+<main>
+  <section id="hero">
+    <h2>Hello, I’m Angelina</h2>
+    <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
+    <p><em>Interested in backend development and cloud computing.</em></p>
+    <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
+    <p><a href="#projects">View my projects</a> | <a href="YourCVLink.pdf">Download my CV</a></p>
+  </section>
+ 
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about-content">
+      <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
+      <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
+      <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
+    </div>
+  </section>
+ 
+  <section id="projects">
+    <h2>Featured projects</h2>
+ 
+    <article>
+      <h3>Project 1 – Title</h3>
+      <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skillks, and interests. </p>
+      <p><strong>Tech stack:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interacitve elements. </p>
+      <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices </p>
+      <p><a href="https://github.com/8ange/project1">Source code</a> | <a href="https://your-demo-link.com">Live demo</a></p>
+    </article>
+ 
+    <article>
+      <h3>Project 2 – Title</h3>
+      <p><strong>Summary:</strong> AA small web application that allows users to store and retrieve data from a database through a web interface. </p>
+      <p><strong>Tech stack:</strong> Python, Flask, SQL</p>
+      <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL </p>
+      <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations wrok in practice.</p>
+      <p><a href="https://github.com/yourusername/project2">Source code</a></p>
+    </article>
+  </section>
 
-    <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Portfolio Website</h3>
-          <p>A personal portfolio created to showcase my programming journey and skills.</p>
-          <div class="tech-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="links">
-            <a href="https://github.com/8ange/project1">Code →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <h3>Database Web App</h3>
-          <p>Small application for data storage and retrieval via a web interface.</p>
-          <div class="tech-stack">
-            <span>Python</span><span>Flask</span><span>SQL</span>
-          </div>
-          <div class="links">
-            <a href="https://github.com/yourusername/project2">Code →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-      <h2>Skills & Tools</h2>
-      <div class="skills-container">
-        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JS, SQL</p>
-        <p><strong>Frameworks:</strong> Git, GitHub, VS Code, Flask</p>
-      </div>
-    </section>
-
-    <section id="production-diary">
-      <h2>Production diary – Week 15</h2>
-      <div class="diary-entry">
-        <p><strong>Date:</strong> 13 February 2026</p>
-        <p>
-          This week I worked on my GitHub Pages portfolio website. I focused on
-          creating and improving the main sections (About, Projects, Skills, Contact)
-          and setting up my CS Maths & Tools page.
-        </p>
-        <p>
-          <strong>I am most happy with </strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique compared to the standard templates.
-        </p>
-        <p>
-          <strong>I found it difficult to </strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I had to carefully pick which elements to style.
-        </p>
-        <p>
-          <strong>Next time I want to improve </strong> the responsiveness of the project grid and perhaps add some small CSS animations to make the "Diary" entries slide in smoothly.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-card">
-      <h2>Let's Connect</h2>
-      <p>York, United Kingdom</p>
-      <p>📧 <a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
-      <div class="social-links">
-        <a href="https://github.com/8ange">GitHub</a> | 
-        <a href="https://linkedin.com/in/your-link">LinkedIn</a>
-      </div>
-    </section>
-  </main>
+  <section id="production-diary">
+    <h2>Production diary – Week 15</h2>
+    <div class="diary-entry">
+      <p><strong>Date:</strong> 10 February 2026</p>
+      <p>
+        This week I worked on my GitHub Pages portfolio website. I focused on
+        creating or improving the main sections (About, Projects, Skills, Contact)
+        and setting up my CS Maths & Tools page.
+      </p>
+      <p>
+        <strong>I am most happy with</strong> the visual progress of the site. I managed to implement a clean, academic-style theme using a navy and beige palette that feels very personal.
+      </p>
+      <p>
+        <strong>I found it difficult to</strong> structure the HTML correctly so that the sections flow naturally, but after some testing with CSS, it works well.
+      </p>
+      <p>
+        <strong>Next time I want to improve</strong> the technical descriptions of my projects and add more documentation for my cloud computing interests.
+      </p>
+    </div>
+  </section>
+ 
+  <section id="skills">
+    <h2>Skills and tools</h2>
+    <div class="about-content">
+      <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
+      <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
+      <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
+    </div>
+  </section>
+ 
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto: jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
+    <p>Location: York, United Kingdom</p>
+    <p>Profiles: 
+      <a href="https://github.com/8ange">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/your-link/">LinkedIn</a>
+    </p>
+  </section>
+</main>
 </body>
 </html>
