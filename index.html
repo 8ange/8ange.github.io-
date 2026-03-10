@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angelina | Portfolio</title>
   <style>
-    /* Basic styling: beige background and navy blue accents */
+    /* Основные стили: бежевый фон и темно-синие акценты */
     body { 
       font-family: 'Georgia', serif; 
       max-width: 950px; 
@@ -23,18 +23,8 @@
       padding-bottom: 1.5rem; 
     }
 
-    .logo { 
-      margin-bottom: 0.2rem; 
-      color: #001f3f; 
-      font-size: 2.8rem; 
-      font-style: italic; 
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: #555;
-      font-size: 1.1rem;
-    }
+    .logo { color: #001f3f; font-size: 2.8rem; font-style: italic; margin: 0; }
+    .subtitle { font-style: italic; color: #555; font-size: 1.1rem; }
 
     h2 { 
       color: #001f3f; 
@@ -44,17 +34,14 @@
       font-style: italic;
     }
 
-    nav { margin-top: 1.5rem; }
     nav a { 
       margin-right: 25px; 
       text-decoration: none; 
       color: #001f3f; 
       font-weight: bold; 
       font-style: italic;
-      font-size: 1.1rem;
       transition: 0.3s; 
     }
-    nav a:hover { color: #555; border-bottom: 1px solid #555; }
 
     .project-grid {
       display: grid;
@@ -70,17 +57,8 @@
       border-radius: 8px; 
       font-style: italic; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    h3 { margin-top: 0; color: #001f3f; font-size: 1.4rem; }
-
-    .tech-stack { margin: 10px 0; }
     .tech-stack span {
       background: #f5f5f0;
       color: #001f3f;
@@ -93,12 +71,6 @@
       border: 1px solid #dee2e6;
     }
 
-    a { color: #001f3f; text-decoration: none; font-weight: 600; }
-    a:hover { text-decoration: underline; }
-
-    .hero-links { margin-top: 1.5rem; }
-
-    /* Contact Section Styling */
     .contact-grid {
       display: flex;
       gap: 60px;
@@ -106,27 +78,12 @@
       margin-top: 2rem;
     }
 
-    .contact-details { flex: 1; }
-
     .contact-form-card {
       flex: 1.5;
       background: #ffffff;
       padding: 2.5rem;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 31, 63, 0.05);
-    }
-
-    .form-group { margin-bottom: 1.5rem; }
-
-    label {
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-      color: #001f3f;
-      font-weight: bold;
-      font-style: normal;
     }
 
     input, textarea {
@@ -138,77 +95,52 @@
       font-family: 'Georgia', serif;
       font-style: italic;
       font-size: 1rem;
-      transition: border-color 0.4s ease;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-bottom: 2px solid #001f3f;
     }
 
     #submit-btn {
       background-color: #001f3f;
       color: #f5f5f0;
       border: none;
-      padding: 12px 30px;
+      padding: 14px 30px;
       border-radius: 4px;
       cursor: pointer;
       font-family: 'Georgia', serif;
       font-style: italic;
       font-weight: bold;
-      transition: all 0.3s ease;
       width: 100%;
       margin-top: 1rem;
     }
 
-    #submit-btn:hover {
-      background-color: #555;
-      transform: translateY(-2px);
-    }
-
-    /* Toast Notification Style */
+    /* СТИЛЬ ДЛЯ ТАБЛИЧКИ (TOAST) */
     .toast {
       position: fixed;
-      bottom: -100px; 
+      bottom: -100px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(232, 245, 233, 0.95); 
-      backdrop-filter: blur(5px);
+      background: #e8f5e9;
       color: #2e7d32;
-      padding: 14px 28px;
-      border-radius: 12px;
-      border: 1px solid rgba(46, 125, 50, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      font-family: 'Georgia', serif;
+      padding: 16px 32px;
+      border-radius: 50px;
+      border: 1px solid #c8e6c9;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
       font-style: italic;
-      font-size: 0.95rem;
       z-index: 10000;
       transition: bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .toast.show {
-      bottom: 40px; 
-    }
-    
-    @media (max-width: 768px) {
-      .project-grid { grid-template-columns: 1fr; }
-      .contact-grid { flex-direction: column; gap: 30px; }
-    }
+    .toast.show { bottom: 40px; }
   </style>
 </head>
-
 <body>
 
   <header>
-    <div class="logo-group">
-      <h1 class="logo">Angelina</h1>
-      <p class="subtitle">Computer Science Student • Portfolio</p>
-    </div>
-    <nav aria-label="Primary">
+    <h1 class="logo">Angelina</h1>
+    <p class="subtitle">Computer Science Student • Portfolio</p>
+    <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#production-diary">Diary</a>
+      <a href="#diary">Diary</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -217,19 +149,12 @@
     <section id="hero">
       <h2>Hello, I’m Angelina</h2>
       <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
-      <p><em>Interested in backend development and cloud computing.</em></p>
-      <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
-      <p class="hero-links">
-        <a href="#projects">View my projects →</a>
-      </p>
     </section>
 
     <section id="about">
       <h2>About me</h2>
       <div class="info-card">
-        <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-        <p>Currently, I am focusing on building a strong academic foundation and exploring how different technologies work together to create useful applications.</p>
-        <p>In my spare time, I enjoy exploring new software tools, staying curious about tech trends, and practicing my coding skills through university modules and personal learning.</p>
+        <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, and databases.</p>
       </div>
     </section>
 
@@ -238,45 +163,21 @@
       <div class="project-grid">
         <article>
           <h3>Project 1 – Portfolio</h3>
-          <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skills, and interests.</p>
-          <div class="tech-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interactive elements.</p>
-          <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices.</p>
-          <p><a href="https://github.com/8ange/project1">Source code</a></p>
+          <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+          <p>Designed and developed the entire frontend with a responsive layout.</p>
         </article>
-
         <article>
           <h3>Project 2 – Data App</h3>
-          <p><strong>Summary:</strong> A small web application that allows users to store and retrieve data from a database through a web interface.</p>
-          <div class="tech-stack">
-            <span>Python</span><span>Flask</span><span>SQL</span>
-          </div>
-          <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL.</p>
-          <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations work in practice.</p>
-          <p><a href="https://8ange.github.io/8ange.github.io-/">Source code</a></p>
+          <div class="tech-stack"><span>Python</span><span>Flask</span><span>SQL</span></div>
+          <p>Implemented backend logic and connected the application to SQL.</p>
         </article>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills and tools</h2>
-      <div class="info-card">
-        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
-        <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
-        <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
-      </div>
-    </section>
-
-    <section id="production-diary">
-      <h2>Production diary – Week 15</h2>
+    <section id="diary">
+      <h2>Production Diary</h2>
       <div class="diary-entry">
-        <p><strong>Date:</strong> 10 February 2026</p>
-        <p>This week I worked on my GitHub Pages portfolio website. I focused on creating and improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
-        <p><strong>I am most happy with</strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique.</p>
-        <p><strong>I found it difficult to</strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I carefully picked which elements to style.</p>
-        <p><strong>Next time I want to improve</strong> the responsiveness of the project grid and add some small CSS animations.</p>
+        <p><strong>Week 15:</strong> Focused on creating the main sections and improving visual design with a navy and beige palette.</p>
       </div>
     </section>
 
@@ -284,31 +185,14 @@
       <h2>Let's Connect</h2>
       <div class="contact-grid">
         <div class="contact-details">
-          <p class="location">York, United Kingdom</p>
-          <p class="email-display">
-            <a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a>
-          </p>
-          <div class="social-links">
-            <a href="https://github.com/8ange" target="_blank">GitHub</a>
-            <span class="sep">•</span>
-            <a href="https://linkedin.com/in/my-link" target="_blank">LinkedIn</a>
-          </div>
+          <p>York, United Kingdom</p>
+          <p><a href="mailto:jbx527@york.ac.uk">jbx527@york.ac.uk</a></p>
         </div>
-
         <div class="contact-form-card">
           <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Write your thoughts here..." rows="4"></textarea>
-            </div>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea rows="4" placeholder="Message" required></textarea>
             <button type="submit" id="submit-btn">Send Message</button>
           </form>
         </div>
@@ -317,57 +201,18 @@
   </main>
 
   <div id="success-toast" class="toast">
-    Successfully sent. I'll get back to you soon.
+    ✓ Successfully sent. I'll get back to you soon.
   </div>
 
   <script>
-    // 1. Supabase Configuration
-    const SUPABASE_URL  = "https://YOUR-PROJECT-REF.supabase.co"; 
-    const SUPABASE_ANON = "YOUR-ANON-KEY-HERE";
-
-    // 2. Form Submission Logic
-    document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
       event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
-      const btn = document.getElementById("submit-btn");
       const toast = document.getElementById("success-toast");
-
-      btn.disabled = true;
-      btn.textContent = "Sending...";
-
-      try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "apikey": SUPABASE_ANON,
-            "Authorization": `Bearer ${SUPABASE_ANON}`,
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify({ name, email, message })
-        });
-
-        if (response.ok) {
-          event.target.reset(); // Очистить форму
-          toast.classList.add("show"); // Показать уведомление
-
-          setTimeout(() => {
-            toast.classList.remove("show");
-          }, 7000);
-        } else {
-          throw new Error("Failed to send");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("Something went wrong. Check your internet or Supabase settings.");
-      } finally {
-        btn.disabled = false;
-        btn.textContent = "Send Message";
-      }
+      toast.classList.add("show");
+      event.target.reset();
+      setTimeout(() => { toast.classList.remove("show"); }, 7000);
     });
   </script>
+
 </body>
 </html>
