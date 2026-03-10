@@ -95,9 +95,10 @@
 
     .hero-links { margin-top: 1.5rem; }
 
-    /* Contact Grid */
+    /* Contact Section Styling */
     .contact-grid {
       display: flex;
+      gap: 600px; /* Resetting to your original or standard gap */
       gap: 60px;
       align-items: flex-start;
       margin-top: 2rem;
@@ -163,7 +164,7 @@
       transform: translateY(-2px);
     }
 
-    /* Elegant Toast Styling */
+    /* THE GREEN TOAST STYLE */
     .toast {
       position: fixed;
       bottom: -100px; 
@@ -183,14 +184,12 @@
       transition: bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .toast.show { bottom: 40px; }
-
-    @media (max-width: 768px) {
-      .contact-grid { flex-direction: column; gap: 30px; }
-      .project-grid { grid-template-columns: 1fr; }
+    .toast.show {
+      bottom: 40px; 
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -214,7 +213,7 @@
       <p><em>Interested in backend development and cloud computing.</em></p>
       <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
       <p class="hero-links">
-        <a href="#projects" style="color:#001f3f; text-decoration: none; font-weight: bold;">View my projects →</a>
+        <a href="#projects" style="color:#001f3f; font-weight: bold;">View my projects →</a>
       </p>
     </section>
 
@@ -223,6 +222,7 @@
       <div class="info-card">
         <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
         <p>Currently, I am focusing on building a strong academic foundation and exploring how different technologies work together to create useful applications.</p>
+        <p>In my spare time, I enjoy exploring new software tools, staying curious about tech trends, and practicing my coding skills through university modules and personal learning.</p>
       </div>
     </section>
 
@@ -231,21 +231,34 @@
       <div class="project-grid">
         <article>
           <h3>Project 1 – Portfolio</h3>
-          <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects and skills.</p>
+          <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skills, and interests.</p>
           <div class="tech-stack">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
           </div>
-          <p><a href="https://github.com/8ange/project1" style="color: #001f3f;">Source code</a></p>
+          <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interactive elements.</p>
+          <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices.</p>
+          <p><a href="https://github.com/8ange/project1" style="color: #001f3f; text-decoration: underline;">Source code</a></p>
         </article>
 
         <article>
           <h3>Project 2 – Data App</h3>
-          <p><strong>Summary:</strong> A small web application that allows users to store and retrieve data through a web interface.</p>
+          <p><strong>Summary:</strong> A small web application that allows users to store and retrieve data from a database through a web interface.</p>
           <div class="tech-stack">
             <span>Python</span><span>Flask</span><span>SQL</span>
           </div>
-          <p><a href="https://8ange.github.io/8ange.github.io-/" style="color: #001f3f;">Source code</a></p>
+          <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL.</p>
+          <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations work in practice.</p>
+          <p><a href="https://8ange.github.io/8ange.github.io-/" style="color: #001f3f; text-decoration: underline;">Source code</a></p>
         </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills and tools</h2>
+      <div class="info-card">
+        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
+        <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
+        <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
       </div>
     </section>
 
@@ -253,7 +266,10 @@
       <h2>Production diary – Week 15</h2>
       <div class="diary-entry">
         <p><strong>Date:</strong> 10 February 2026</p>
-        <p>This week I focused on creating the main sections and improving visual design. Moving to a navy and beige palette makes the site feel much more professional.</p>
+        <p>This week I worked on my GitHub Pages portfolio website. I focused on creating and improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
+        <p><strong>I am most happy with</strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique.</p>
+        <p><strong>I found it difficult to</strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I carefully picked which elements to style.</p>
+        <p><strong>Next time I want to improve</strong> the responsiveness of the project grid and add some small CSS animations.</p>
       </div>
     </section>
 
@@ -262,9 +278,12 @@
       <div class="contact-grid">
         <div class="contact-details">
           <p class="location">York, United Kingdom</p>
-          <p class="email-display"><a href="mailto:jbx527@york.ac.uk" style="color: #001f3f;">jbx527@york.ac.uk</a></p>
+          <p class="email-display">
+            <a href="mailto:jbx527@york.ac.uk" style="color: #001f3f; font-weight: bold;">jbx527@york.ac.uk</a>
+          </p>
           <div class="social-links">
-            <a href="https://github.com/8ange" target="_blank" style="color: #001f3f;">GitHub</a> • 
+            <a href="https://github.com/8ange" target="_blank" style="color: #001f3f;">GitHub</a>
+            <span class="sep"> • </span>
             <a href="https://linkedin.com/in/my-link" target="_blank" style="color: #001f3f;">LinkedIn</a>
           </div>
         </div>
@@ -291,54 +310,27 @@
   </main>
 
   <div id="success-toast" class="toast">
-    Successfully sent. I'll get back to you soon.
+    ✓ Successfully sent. I'll get back to you soon.
   </div>
 
   <script>
-    // Configuration
-    const SUPABASE_URL  = "https://YOUR-PROJECT-REF.supabase.co"; 
-    const SUPABASE_ANON = "YOUR-ANON-KEY-HERE";
+    // Just the simple logic you asked for - show toast on click
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Stop page reload
 
-    const contactForm = document.getElementById("contact-form");
-    const submitBtn = document.getElementById("submit-btn");
-    const toast = document.getElementById("success-toast");
+      const btn = document.getElementById("submit-btn");
+      const toast = document.getElementById("success-toast");
 
-    contactForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
+      // Show toast
+      toast.classList.add("show");
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+      // Clear the form
+      event.target.reset();
 
-      // Feedback state
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
-
-      try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "apikey": SUPABASE_ANON,
-            "Authorization": `Bearer ${SUPABASE_ANON}`,
-            "Prefer": "return=minimal"
-          },
-          body: JSON.stringify({ name, email, message })
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          toast.classList.add("show");
-          setTimeout(() => toast.classList.remove("show"), 7000);
-        } else {
-          alert("Apologies, something went wrong. Please try again.");
-        }
-      } catch (error) {
-        alert("Unable to connect. Please check your internet.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Send Message";
-      }
+      // Hide toast after 7 seconds
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 7000);
     });
   </script>
 </body>
