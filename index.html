@@ -313,25 +313,44 @@
     ✓ Successfully sent. I'll get back to you soon.
   </div>
 
-  <script>
-    // Just the simple logic you asked for - show toast on click
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault(); // Stop page reload
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://ohfumxljvqdpzewidclk.supabase.co';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oZnVteGxqdnFkcHpld2lkY2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMDY0ODQsImV4cCI6MjA4ODU4MjQ4NH0.EaaUOnr0BNRWqamwTmrdl7POpKCFj-cfraBmMPmVzhg';
 
-      const btn = document.getElementById("submit-btn");
-      const toast = document.getElementById("success-toast");
+  
+  const { createClient } = supabase;
+  const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-      // Show toast
+  document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const btn = document.getElementById("submit-btn");
+    const toast = document.getElementById("success-toast");
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    btn.textContent = "Sending...";
+    btn.disabled = true;
+
+    const { error } = await client
+      .from("contact_messages")
+      .insert([{ name, email, message }]);
+
+    if (error) {
+      alert("Something went wrong. Please try again.");
+      console.error(error);
+    } else {
       toast.classList.add("show");
-
-      // Clear the form
       event.target.reset();
+      setTimeout(() => toast.classList.remove("show"), 7000);
+    }
 
-      // Hide toast after 7 seconds
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 7000);
-    });
-  </script>
+    btn.textContent = "Send Message";
+    btn.disabled = false;
+  });
+</script>
 </body>
 </html>
