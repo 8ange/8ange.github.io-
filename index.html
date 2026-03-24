@@ -4,353 +4,877 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Angelina | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
   <style>
-    /* Basic styling: beige background and navy blue accents */
-    body { 
-      font-family: 'Georgia', serif; 
-      max-width: 950px; 
-      margin: 0 auto; 
-      padding: 2rem; 
-      line-height: 1.6; 
-      color: #333; 
-      background-color: #f5f5f0; 
-      scroll-behavior: smooth;
+    :root {
+      --cream: #f7f3ee;
+      --paper: #ede8e0;
+      --ink: #1a1a2e;
+      --navy: #0d1b3e;
+      --dusty-blue: #7b9bb5;
+      --muted: #8a8070;
+      --accent: #c4a882;
+      --white: #fdfcfa;
     }
 
-    header { 
-      border-bottom: 2px solid #001f3f; 
-      margin-bottom: 3rem; 
-      padding-bottom: 1.5rem; 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .logo { 
-      margin-bottom: 0.2rem; 
-      color: #001f3f; 
-      font-size: 2.8rem; 
-      font-style: italic; 
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: #555;
-      font-size: 1.1rem;
-    }
-
-    h2 { 
-      color: #001f3f; 
-      border-bottom: 1px solid #dcdcdc; 
-      padding-bottom: 0.5rem; 
-      margin-top: 3rem; 
-      font-style: italic;
-    }
-
-    nav { margin-top: 1.5rem; }
-    nav a { 
-      margin-right: 25px; 
-      text-decoration: none; 
-      color: #001f3f; 
-      font-weight: bold; 
-      font-style: italic;
-      font-size: 1.1rem;
-      transition: 0.3s; 
-    }
-    nav a:hover { color: #555; border-bottom: 1px solid #555; }
-
-    .project-grid {
+    /* ── HEADER ── */
+    header {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 2rem 4rem;
+      border-bottom: 1px solid var(--accent);
     }
 
-    article, .diary-entry, .info-card { 
-      background: #ffffff; 
-      padding: 1.8rem; 
-      border-left: 6px solid #001f3f; 
-      border-radius: 8px; 
-      font-style: italic; 
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    h3 { margin-top: 0; color: #001f3f; font-size: 1.4rem; }
-
-    .tech-stack { margin: 10px 0; }
-    .tech-stack span {
-      background: #f5f5f0;
-      color: #001f3f;
-      padding: 4px 10px;
-      margin-right: 8px;
-      font-size: 0.85rem;
-      border-radius: 5px;
-      font-style: normal;
-      font-weight: bold;
-      border: 1px solid #dee2e6;
-    }
-
-    .hero-links { margin-top: 1.5rem; }
-
-    /* Contact Section Styling */
-    .contact-grid {
-      display: flex;
-      gap: 600px; /* Resetting to your original or standard gap */
-      gap: 60px;
-      align-items: flex-start;
-      margin-top: 2rem;
-    }
-
-    .contact-details { flex: 1; }
-
-    .contact-form-card {
-      flex: 1.5;
-      background: #ffffff;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 31, 63, 0.05);
-    }
-
-    .form-group { margin-bottom: 1.5rem; }
-
-    label {
-      display: block;
-      font-size: 0.75rem;
+    .header-meta {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-      color: #001f3f;
-      font-weight: bold;
-      font-style: normal;
+      color: var(--muted);
+    }
+    .header-meta.right { text-align: right; }
+
+    .logo-wrap { text-align: center; }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-style: italic;
+      color: var(--navy);
+      letter-spacing: -1px;
+      line-height: 1;
     }
 
-    input, textarea {
+    .logo-sub {
+      font-size: 0.68rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1rem 4rem;
+      border-bottom: 1px solid rgba(196,168,130,0.3);
+    }
+
+    nav a {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--navy);
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr;
+      min-height: 60vh;
+      border-bottom: 1px solid rgba(196,168,130,0.4);
+    }
+
+    .hero-divider {
+      background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+      margin: 3rem 0;
+    }
+
+    .hero-left {
+      padding: 5rem 4rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-issue {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-style: italic;
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 380px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
+      padding: 5px 14px;
+      color: var(--navy);
+      margin-right: 8px;
+      margin-bottom: 8px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .hero-tag:hover { background: var(--accent); color: var(--white); }
+
+    .hero-right {
+      padding: 4rem 4rem 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ── PHOTO CARD ── */
+    .photo-frame {
+      width: 240px;
+      aspect-ratio: 3/4;
+      background: var(--paper);
+      border: 1px solid rgba(196,168,130,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 6px 6px 0 var(--accent), 10px 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
       width: 100%;
-      padding: 12px 0;
-      border: none;
-      border-bottom: 1px solid #dcdcdc;
-      background: transparent;
-      font-family: 'Georgia', serif;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      text-align: center;
+      color: var(--muted);
+      padding: 1rem;
+    }
+    .photo-placeholder svg { opacity: 0.25; display: block; margin: 0 auto 0.5rem; }
+    .photo-placeholder span {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .photo-caption {
+      margin-top: 1.2rem;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── PAGE SECTIONS ── */
+    .page-section {
+      padding: 5rem 4rem;
+      border-bottom: 1px solid rgba(196,168,130,0.3);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.62rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent), transparent);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 2rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-sidebar { position: relative; padding-bottom: 2rem; }
+
+    .about-sidebar .photo-frame { width: 100%; aspect-ratio: 3/4; }
+
+    .sidebar-note {
+      position: absolute;
+      bottom: 0;
+      left: -16px;
+      background: var(--white);
+      border: 1px solid var(--accent);
+      padding: 10px 14px;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--navy);
+      max-width: 170px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.06);
+      line-height: 1.5;
+    }
+
+    .about-text p {
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: #3a3a3a;
+      margin-bottom: 1.3rem;
+    }
+
+    .about-text p:first-of-type::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-style: italic;
+      float: left;
+      line-height: 0.8;
+      margin-right: 6px;
+      margin-top: 6px;
+      color: var(--navy);
+    }
+
+    .about-text strong { color: var(--navy); }
+
+    /* ── ACHIEVEMENTS ── */
+    .achievements-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(196,168,130,0.15);
+    }
+
+    .ach-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      transition: background 0.35s, color 0.35s;
+      cursor: default;
+    }
+
+    .ach-card:hover { background: var(--navy); }
+    .ach-card:hover .ach-num { color: var(--accent); }
+    .ach-card:hover .ach-title,
+    .ach-card:hover .ach-desc { color: var(--cream); }
+
+    .ach-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-style: italic;
+      color: rgba(196,168,130,0.35);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      transition: color 0.35s;
+    }
+
+    .ach-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+
+    .ach-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+      transition: color 0.35s;
+    }
+
+    .ach-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      transition: color 0.35s;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid rgba(196,168,130,0.3);
+      padding: 2.5rem;
+      position: relative;
+      transition: box-shadow 0.3s, transform 0.3s;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--navy), var(--dusty-blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card:hover {
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+
+    .project-num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .project-desc {
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 1rem 0; }
+
+    .tag {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--navy);
+      padding: 3px 10px;
+      color: var(--navy);
+    }
+
+    .project-link {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .project-link:hover { color: var(--accent); }
+
+    /* ── SKILLS ── */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .skill-group h4 {
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1rem;
-      transition: border-color 0.4s ease;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--accent);
     }
 
-    input:focus, textarea:focus {
-      outline: none;
-      border-bottom: 2px solid #001f3f;
-    }
-
-    #submit-btn {
-      background-color: #001f3f;
-      color: #f5f5f0;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Georgia', serif;
+    .skill-item {
+      font-size: 0.9rem;
+      color: #555;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(196,168,130,0.2);
       font-style: italic;
-      font-weight: bold;
-      transition: all 0.3s ease;
+    }
+
+    /* ── DIARY ── */
+    .diary-card {
+      background: var(--white);
+      border: 1px solid rgba(196,168,130,0.3);
+      padding: 3rem;
+      max-width: 720px;
+      position: relative;
+    }
+
+    .diary-card::after {
+      content: '\275D';
+      position: absolute;
+      top: -20px; left: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.35;
+      line-height: 1;
+    }
+
+    .diary-date {
+      font-size: 0.62rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .diary-card p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+    .diary-card strong { color: var(--navy); font-style: normal; }
+
+    /* ── CONTACT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail { margin-bottom: 1.2rem; }
+
+    .contact-detail-label {
+      font-size: 0.58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .contact-detail a,
+    .contact-detail p {
+      font-size: 1rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-style: italic;
+      transition: color 0.3s;
+    }
+    .contact-detail a:hover { color: var(--accent); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .form-row label {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .form-row input,
+    .form-row textarea {
       width: 100%;
-      margin-top: 1rem;
+      border: none;
+      border-bottom: 1px solid rgba(196,168,130,0.5);
+      background: transparent;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ink);
+      padding: 8px 0;
+      transition: border-color 0.3s;
+      outline: none;
     }
 
-    #submit-btn:hover {
-      background-color: #555;
-      transform: translateY(-2px);
+    .form-row input:focus,
+    .form-row textarea:focus { border-bottom-color: var(--navy); }
+
+    .form-row textarea { resize: none; height: 80px; }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--navy);
+      color: var(--cream);
+      border: none;
+      padding: 12px 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .submit-btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid rgba(196,168,130,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* THE GREEN TOAST STYLE */
+    footer p {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── TOAST ── */
     .toast {
       position: fixed;
-      bottom: -100px; 
+      bottom: -100px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(232, 245, 233, 0.95); 
-      backdrop-filter: blur(5px);
-      color: #2e7d32;
-      padding: 14px 28px;
-      border-radius: 12px;
-      border: 1px solid rgba(46, 125, 50, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      font-family: 'Georgia', serif;
+      background: var(--navy);
+      color: var(--cream);
+      padding: 12px 28px;
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 0.95rem;
-      z-index: 10000;
+      letter-spacing: 1px;
+      z-index: 9999;
       transition: bottom 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
+    .toast.show { bottom: 40px; }
 
-    .toast.show {
-      bottom: 40px; 
+    /* ── FADE IN ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left > * {
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      header { grid-template-columns: 1fr; text-align: center; padding: 1.5rem 2rem; }
+      .header-meta { display: none; }
+      nav { padding: 0.8rem 2rem; gap: 1.5rem; flex-wrap: wrap; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-divider { display: none; }
+      .hero-left, .hero-right { padding: 3rem 2rem; }
+      .page-section { padding: 3rem 2rem; }
+      .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .achievements-layout { grid-template-columns: 1fr; }
+      .projects-layout { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; gap: 0.6rem; text-align: center; padding: 1.5rem 2rem; }
     }
   </style>
 </head>
-
 <body>
 
   <header>
-    <div class="logo-group">
-      <h1 class="logo">Angelina</h1>
-      <p class="subtitle">Computer Science Student • Portfolio</p>
+    <span class="header-meta">York, United Kingdom</span>
+    <div class="logo-wrap">
+      <div class="logo">Angelina</div>
+      <div class="logo-sub">Portfolio · 2026</div>
     </div>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#production-diary">Diary</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <span class="header-meta right">Computer Science</span>
   </header>
 
-  <main>
-    <section id="hero">
-      <h2>Hello, I’m Angelina</h2>
-      <p><strong>Computer Science undergraduate</strong> at the University of York.</p>
-      <p><em>Interested in backend development and cloud computing.</em></p>
-      <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
-      <p class="hero-links">
-        <a href="#projects" style="color:#001f3f; font-weight: bold;">View my projects →</a>
-      </p>
-    </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#diary">Diary</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <section id="about">
-      <h2>About me</h2>
-      <div class="info-card">
-        <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-        <p>Currently, I am focusing on building a strong academic foundation and exploring how different technologies work together to create useful applications.</p>
-        <p>In my spare time, I enjoy exploring new software tools, staying curious about tech trends, and practicing my coding skills through university modules and personal learning.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-issue">Open to Summer Internships · 2026</p>
+      <h1 class="hero-title">Hello,<br/>I'm Angelina.</h1>
+      <p class="hero-desc">Computer Science student at the University of York, originally from Kazakhstan. Building things, learning how they work, and figuring out how to make them better.</p>
+      <div>
+        <span class="hero-tag">CS · York</span>
+        <span class="hero-tag">Cybersecurity</span>
+        <span class="hero-tag">Kazakhstan 🇰🇿</span>
       </div>
-    </section>
-
-    <section id="projects">
-      <h2>Featured projects</h2>
-      <div class="project-grid">
-        <article>
-          <h3>Project 1 – Portfolio</h3>
-          <p><strong>Summary:</strong> A personal portfolio website created to showcase my programming projects, skills, and interests.</p>
-          <div class="tech-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <p><strong>My contribution:</strong> I designed and developed the entire frontend, including page layout, styling, and interactive elements.</p>
-          <p><strong>Challenges:</strong> Making the layout responsive on different screen sizes. I solved this by using CSS Flexbox and testing the site on multiple devices.</p>
-          <p><a href="https://github.com/8ange/project1" style="color: #001f3f; text-decoration: underline;">Source code</a></p>
-        </article>
-
-        <article>
-          <h3>Project 2 – Data App</h3>
-          <p><strong>Summary:</strong> A small web application that allows users to store and retrieve data from a database through a web interface.</p>
-          <div class="tech-stack">
-            <span>Python</span><span>Flask</span><span>SQL</span>
-          </div>
-          <p><strong>My contribution:</strong> I designed the database schema, implemented backend logic in Flask, and connected the application to an SQL.</p>
-          <p><strong>Challenges:</strong> Understanding how backend routes communicate with the database. This project helped me learn how CRUD operations work in practice.</p>
-          <p><a href="https://8ange.github.io/8ange.github.io-/" style="color: #001f3f; text-decoration: underline;">Source code</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills and tools</h2>
-      <div class="info-card">
-        <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
-        <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
-        <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
-      </div>
-    </section>
-
-    <section id="production-diary">
-      <h2>Production diary </h2>
-      <div class="diary-entry">
-        <p><strong>Date:</strong> 10 February 2026</p>
-        <p>This week I worked on my GitHub Pages portfolio website. I focused on creating and improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
-        <p><strong>I am most happy with</strong> the new visual design. Moving to a navy and beige palette makes the site feel much more professional and unique.</p>
-        <p><strong>I found it difficult to</strong> balance the use of italics. I wanted an elegant look without making the text hard to read, so I carefully picked which elements to style.</p>
-        <p><strong>Next time I want to improve</strong> the responsiveness of the project grid and add some small CSS animations.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Let's Connect</h2>
-      <div class="contact-grid">
-        <div class="contact-details">
-          <p class="location">York, United Kingdom</p>
-          <p class="email-display">
-            <a href="mailto:jbx527@york.ac.uk" style="color: #001f3f; font-weight: bold;">jbx527@york.ac.uk</a>
-          </p>
-          <div class="social-links">
-            <a href="https://github.com/8ange" target="_blank" style="color: #001f3f;">GitHub</a>
-            <span class="sep"> • </span>
-            <a href="https://linkedin.com/in/my-link" target="_blank" style="color: #001f3f;">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="contact-form-card">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required placeholder="Write your thoughts here..." rows="4"></textarea>
-            </div>
-            <button type="submit" id="submit-btn">Send Message</button>
-          </form>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-right">
+      <div class="photo-frame">
+        <!-- To add your photo, replace the div below with:
+             <img src="your-photo.jpg" alt="Angelina" /> -->
+        <div class="photo-placeholder">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#0d1b3e" stroke-width="1">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>My photo here</span>
         </div>
       </div>
-    </section>
-  </main>
+      <p class="photo-caption">University of York · IYO</p>
+    </div>
+  </section>
 
-  <div id="success-toast" class="toast">
-    ✓ Successfully sent. I'll get back to you soon.
-  </div>
+  <!-- ABOUT -->
+  <section class="page-section" id="about">
+    <div class="section-header">
+      <span class="section-label">01 — Biography</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-layout">
+      <div class="about-sidebar">
+        <div class="photo-frame" style="width:100%; aspect-ratio:3/4;">
+          <!-- Second photo: <img src="your-photo-2.jpg" alt="Angelina" /> -->
+          <div class="photo-placeholder">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d1b3e" stroke-width="1">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>Add photo</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2 class="section-title">About me</h2>
+        <p>I'm from Kazakhstan 🇰🇿 and currently study in York, UK, where I'm completing an <strong>International Year One in Computer Science</strong> at the University of York, combining a foundation year and first year into one. In my final year I'll be specialising in <strong>Cybersecurity</strong>, which has been the plan from the start.</p>
+        <p>Before university, I spenr all 11 years in a private school back home, <strong> Tamos Education </strong>, an international school. In my last year, the school awarded me <strong>merit-based discount on tuition</strong> after I came back from an <strong>International STEM Olympiad in Singapore</strong> with 4 Bronze medals. Getting there wasn't just about showing up, there were several selection rounds before even receiving an invitation, so the medals felt earned.</p>
+        <p>Somewhere along the way I also finished all <strong>10 levels of Mental Arithmetic</strong>, which I started as a kid. It taught me more about patience and focus than I realised at the time.</p>
+        <p>Right now I'm building projects, getting comfortable with new tools, and figuring out what kind of developer I want to be. I'm looking for a <strong>summer internship</strong> where I can be genuinely useful, ask questions, and learn from people who've been doing this longer than me.</p>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL = 'https://ohfumxljvqdpzewidclk.supabase.co';
-  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oZnVteGxqdnFkcHpld2lkY2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMDY0ODQsImV4cCI6MjA4ODU4MjQ4NH0.EaaUOnr0BNRWqamwTmrdl7POpKCFj-cfraBmMPmVzhg';
+  <!-- ACHIEVEMENTS -->
+  <section class="page-section" id="achievements">
+    <div class="section-header">
+      <span class="section-label">02 — Achievements</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="achievements-layout">
+      <div class="ach-card">
+        <div class="ach-num">01</div>
+        <div class="ach-icon">🥉</div>
+        <h4 class="ach-title">International STEM Olympiad — Singapore</h4>
+        <p class="ach-desc">4 Bronze medals representing my school, after passing through a multi-stage selection process to receive the invitation to Singapore.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">02</div>
+        <div class="ach-icon">🎓</div>
+        <h4 class="ach-title">Merit-Based Scholarship</h4>
+        <p class="ach-desc">Awarded a 15% tuition discount by my school administration in recognition of academic and competitive achievements in my final year.</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-num">03</div>
+        <div class="ach-icon">🧮</div>
+        <h4 class="ach-title">Mental Arithmetic — All 10 Levels</h4>
+        <p class="ach-desc">Completed every level from a young age a long-term commitment that shaped how I approach problems: methodically, and with patience.</p>
+      </div>
+    </div>
+  </section>
 
-  
-  const { createClient } = supabase;
-  const client = createClient(SUPABASE_URL, SUPABASE_KEY);
+  <!-- PROJECTS -->
+  <section class="page-section" id="projects">
+    <div class="section-header">
+      <span class="section-label">03 — Projects</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-layout">
+      <div class="project-card">
+        <p class="project-num">Project · 001</p>
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-desc">A personal portfolio website built to showcase my projects, skills, and background. Designed and developed entirely from scratch, with a focus on clean, professional aesthetics.</p>
+        <div class="tag-row">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <p class="project-desc" style="font-size:0.88rem;"><strong>Challenge:</strong> Making the layout responsive across all screen sizes using CSS Flexbox.</p>
+        <a href="https://github.com/8ange/project1" target="_blank" class="project-link">View source →</a>
+      </div>
+      <div class="project-card">
+        <p class="project-num">Project · 002</p>
+        <h3 class="project-title">Data Application</h3>
+        <p class="project-desc">A web application that allows users to store and retrieve data from a database through a simple interface. Covers full-stack logic from schema design to frontend display.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">SQL</span>
+        </div>
+        <p class="project-desc" style="font-size:0.88rem;"><strong>Challenge:</strong> Understanding how backend routes communicate with the database. This project made CRUD operations click for me.</p>
+        <a href="https://8ange.github.io/8ange.github.io-/" target="_blank" class="project-link">View source →</a>
+      </div>
+    </div>
+  </section>
 
-  document.getElementById("contact-form").addEventListener("submit", async function (event) {
-    event.preventDefault();
+  <!-- SKILLS -->
+  <section class="page-section" id="skills">
+    <div class="section-header">
+      <span class="section-label">04 — Skills & Tools</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Java</div>
+        <div class="skill-item">HTML & CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">SQL</div>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks & Tools</h4>
+        <div class="skill-item">Git & GitHub</div>
+        <div class="skill-item">VS Code</div>
+        <div class="skill-item">Supabase</div>
+      </div>
+      <div class="skill-group">
+        <h4>Currently Learning</h4>
+        <div class="skill-item">Fundamentals of Artificial Intelligence</div>
+        <div class="skill-item">Computer Architecture</div>
+        <div class="skill-item">Object-Orinted Programming</div>
+        <div class="skill-item">Introduction to Programming</div>
+        <div class="skill-item">Introduction to Database</div>
+        <div class="skill-item">Mathematics for Computing</div>
+        <div class="skill-item">Web Development</div>
+      </div>
+    </div>
+  </section>
 
-    const btn = document.getElementById("submit-btn");
-    const toast = document.getElementById("success-toast");
+  <!-- DIARY -->
+  <section class="page-section" id="diary">
+    <div class="section-header">
+      <span class="section-label">05 — Production Diary</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="diary-card">
+      <p class="diary-date">10 February 2026</p>
+      <p>This week I worked on my GitHub Pages portfolio. I focused on building and improving the main sections: About, Projects, Skills, and Contact and setting up my CS Maths & Tools page.</p>
+      <p><strong>I'm most happy with</strong> the visual direction. Moving to a navy and beige palette makes the whole site feel more considered and intentional.</p>
+      <p><strong>I found it difficult to</strong> balance the use of italics. I wanted elegance without sacrificing readability, so I was quite deliberate about which elements to style.</p>
+      <p><strong>Next time I want to improve</strong> the responsiveness of the project grid and introduce some subtle animations to make the experience feel more alive.</p>
+    </div>
+  </section>
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+  <!-- CONTACT -->
+  <section class="page-section" id="contact">
+    <div class="section-header">
+      <span class="section-label">06 — Get in Touch</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3>Let's Connect</h3>
+        <div class="contact-detail">
+          <p class="contact-detail-label">Location</p>
+          <p>York, United Kingdom</p>
+        </div>
+        <div class="contact-detail">
+          <p class="contact-detail-label">GitHub</p>
+          <a href="https://github.com/8ange" target="_blank">github.com/8ange</a>
+        </div>
+        <div class="contact-detail">
+          <p class="contact-detail-label">LinkedIn</p>
+          <a href="https://linkedin.com/in/my-link" target="_blank">linkedin.com/in/my-link</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+        </div>
+        <div class="form-row">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Write your thoughts here..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-    btn.textContent = "Sending...";
-    btn.disabled = true;
 
-    const { error } = await client
-      .from("contact_messages")
-      .insert([{ name, email, message }]);
+  <div id="success-toast" class="toast">✓ Sent — I'll get back to you soon.</div>
 
-    if (error) {
-      alert("Something went wrong. Please try again.");
-      console.error(error);
-    } else {
-      toast.classList.add("show");
-      event.target.reset();
-      setTimeout(() => toast.classList.remove("show"), 7000);
-    }
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://ohfumxljvqdpzewidclk.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oZnVteGxqdnFkcHpld2lkY2xrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwMDY0ODQsImV4cCI6MjA4ODU4MjQ4NH0.EaaUOnr0BNRWqamwTmrdl7POpKCFj-cfraBmMPmVzhg';
+    const { createClient } = supabase;
+    const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    btn.textContent = "Send Message";
-    btn.disabled = false;
-  });
-</script>
+    document.getElementById("contact-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById("submit-btn");
+      const toast = document.getElementById("success-toast");
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      btn.textContent = "Sending...";
+      btn.disabled = true;
+      const { error } = await client.from("contact_messages").insert([{ name, email, message }]);
+      if (error) {
+        alert("Something went wrong. Please try again.");
+        console.error(error);
+      } else {
+        toast.classList.add("show");
+        e.target.reset();
+        setTimeout(() => toast.classList.remove("show"), 7000);
+      }
+      btn.textContent = "Send Message";
+      btn.disabled = false;
+    });
+  </script>
 </body>
 </html>
