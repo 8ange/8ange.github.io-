@@ -788,7 +788,7 @@
 
   <div class="diary-card">
     <p class="diary-date">Week 6 · 17 February 2026</p>
-    <p>This week I focused on the visual design and styling of the site. I chose a navy and beige colour palette to give the site a professional, editorial feel. I introduced two Google Fonts — Playfair Display for headings and Cormorant Garamond for body text — to create a refined typographic hierarchy.</p>
+    <p>This week I focused on the visual design and styling of the site. I chose a navy and beige colour palette to give the site a professional, editorial feel. I introduced two Google Fonts. Playfair Display for headings and Cormorant Garamond for body text to create a refined typographic hierarchy.</p>
     <p><strong>I'm most happy with</strong> how the colour scheme came together. The contrast between the dark navy and the warm cream background gives the site a distinctive look that feels intentional rather than generic.</p>
     <p><strong>I found it difficult to</strong> balance the use of italic styling. I wanted elegance without making the text hard to read, so I was quite deliberate about which elements to italicise.</p>
     <p><strong>Next time I want to improve</strong> the spacing and layout consistency across all sections.</p>
@@ -796,23 +796,23 @@
 
   <div class="diary-card">
     <p class="diary-date">Week 7 · 27 February 2026</p>
-    <p>This week I reviewed the site against Nielsen's 10 Usability Heuristics and identified areas for improvement. I made three key changes: I added a visible confirmation message (toast notification) after the form is submitted so users know their message was received; I improved the navigation by making all anchor links scroll smoothly to their sections; and I fixed the mobile layout of the About section so the photo no longer fills the entire screen on small devices.</p>
+    <p>This week I reviewed the site against Nielsen's 10 Usability Heuristics and identified areas for improvement. I made three key changes: I added a visible confirmation message (toast notification) after the form is submitted so users know their message was received; I improved the navigation by making all anchor links scroll smoothly to their sections and I fixed the mobile layout of the About section so the photo no longer fills the entire screen on small devices.</p>
     <p><strong>I'm most happy with</strong> the usability improvements overall. Small changes like the toast notification and smooth scrolling make the site feel much more polished and complete.</p>
     <p><strong>I found it difficult to</strong> identify usability issues with my own site, since I had grown used to how it works. Testing it on a different device helped me notice problems I had missed.</p>
-    <p><strong>Next time I want to improve</strong> accessibility — adding proper alt text to all images and improving keyboard navigation across the site.</p>
+    <p><strong>Next time I want to improve</strong> accessibility, adding proper alt text to all images and improving keyboard navigation across the site.</p>
   </div>
 
   <div class="diary-card">
     <p class="diary-date">Week 8 · 3 March 2026</p>
     <p>This week I added the Contact section to the site, including a form with fields for name, email, and message. I also set up a Supabase project and created a table called <strong>contact_messages</strong> with columns for id, name, email, message, and created_at. I connected the form to Supabase using JavaScript so that submissions are stored directly in the database.</p>
-    <p><strong>I'm most happy with</strong> getting the full end-to-end flow working — a user fills in the form, clicks Send, the data gets stored in Supabase, and a confirmation toast appears on screen. It was satisfying to see it all come together.</p>
+    <p><strong>I'm most happy with</strong> getting the full end-to-end flow working, a user fills in the form, clicks Send, the data gets stored in Supabase, and a confirmation toast appears on screen. It was satisfying to see it all come together.</p>
     <p><strong>I found it difficult to</strong> debug the Supabase connection at first. I had an error related to Row Level Security policies, which I resolved by creating an INSERT policy for anonymous users in the Supabase dashboard.</p>
-    <p><strong>Next time I want to improve</strong> the error handling in the form — currently it shows a generic alert if something goes wrong, which isn't a great user experience.</p>
+    <p><strong>Next time I want to improve</strong> the error handling in the form, currently it shows a generic alert if something goes wrong, which isn't a great user experience.</p>
   </div>
 
   <div class="diary-card">
     <p class="diary-date">Week 9 · 10 March 2026</p>
-    <p>This week I worked on improving the overall layout and adding more content to the site. I updated the About section with detailed information about where I'm from — Kazakhstan — my school background, and my academic journey so far at the University of York.</p>
+    <p>This week I worked on improving the overall layout and adding more content to the site. I updated the About section with detailed information about where I'm from <strong>Kazakhstan</strong> my school background, and my academic journey so far at the <strong>University of York</strong>.</p>
     <p><strong>I'm most happy with</strong> how the About section reads now. It feels personal and honest without being too long, and I think it gives a visitor a real sense of who I am.</p>
     <p><strong>I found it difficult to</strong> decide how much personal detail to include. I wanted the section to be human and engaging, but not overshare.</p>
     <p><strong>Next time I want to improve</strong> the responsiveness of the layout on smaller screen sizes, particularly the project grid and the about section.</p>
@@ -850,7 +850,7 @@
         </div>
         <div class="contact-detail">
           <p class="contact-detail-label">LinkedIn</p>
-          <a href="https://linkedin.com/in/my-link" target="_blank">linkedin.com</a>
+          <a href="www.linkedin.com/in/angelina-kan-376a203b0" target="_blank">Angelina Kan</a>
         </div>
       <div class="contact-detail">
           <p class="contact-detail-label">Instagram</p>
@@ -860,11 +860,11 @@
       <form class="contact-form" id="contact-form">
         <div class="form-row">
           <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+          <input type="text" id="name" name="name" required placeholder="Your name" />
         </div>
         <div class="form-row">
           <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+          <input type="email" id="email" name="email" required placeholder="yourname@example.com" />
         </div>
         <div class="form-row">
           <label for="message">Message</label>
