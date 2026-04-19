@@ -229,13 +229,16 @@
     }
 
     /* ── ABOUT ── */
-    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .about-sidebar { padding-bottom: 1rem; }
-    .about-sidebar .photo-frame {
-      width: 160px;
-      aspect-ratio: 3/4;
-      margin: 0 auto;
+    .about-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 5rem;
+      align-items: start;
     }
+
+    .about-sidebar { position: relative; padding-bottom: 2rem; }
+
+    .about-sidebar .photo-frame { width: 100%; aspect-ratio: 3/4; }
 
     .sidebar-note {
       position: absolute;
